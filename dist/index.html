@@ -1,0 +1,83 @@
+<!doctype html><html ng-app="misstomissey"><head><meta charset="utf-8"><title>misstomissey</title><meta name="description" content=""><meta property="og:url" content="http://misstomissey.com"><meta property="og:title" content="Miss To Missey"><meta property="og:description" content="Marc and Bridget are getting married! October 22, 2016"><meta property="og:image" content="http://misstomissey.com/assets/images/metapic.jpg"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="styles/vendor-c2769e81fe.css"><link rel="stylesheet" href="styles/app-b12ca04a81.css"></head><body><!--[if lt IE 10]>
+ <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+ <![endif]--><div ng-view=""></div><script src="scripts/vendor-5b2e729ac4.js"></script><script src="scripts/app-7861a6b85a.js"></script></body><script type="text/javascript">
+    var running = false;
+    function sparkle(){
+        canvas = document.getElementById("sparkler");
+        context = canvas.getContext("2d");
+
+        NUM_SPARKS = 50;
+        CHANGE_RATE = 0.4;
+        MAX_RADIUS = 8;
+        MAX_Y = 700;
+        PI_2 = 2*Math.PI;
+
+        var w = canvas.width = window.innerWidth;
+        var h = canvas.height = 800;
+        console.log(w,h)
+        resizeWindow = function(){
+          window.w = canvas.width = window.innerWidth;
+          //window.h = canvas.height = window.innerHeight;
+        }
+          
+        window.addEventListener('resize', resizeWindow, false);
+
+        drawCircle = function (x,y,r,style) {
+          context.beginPath()
+          context.arc(x,y,r,0,PI_2,false)
+           context.fillStyle = style;
+          context.fill();
+        };
+
+        var Spark = function() {
+          this.x = Math.random(0,100)*w;
+          this.y = Math.random(0,100)*MAX_Y;
+          this.maxRadius = Math.random(50,100)*MAX_RADIUS;
+          this.minRadius = Math.random(50,100)*5;
+          this.radius = this.minRadius;
+          this.style = "#E8C353";
+          this.radChange = CHANGE_RATE;
+        };
+
+        Spark.prototype.render = function (){
+           this.radius=this.radius+this.radChange;
+           this.y += 1;
+          if(this.radius >= this.maxRadius){
+            this.radChange = -CHANGE_RATE;
+          }
+          if(this.radius <= 0.5){
+            this.x = Math.random(0,100)*w;
+            this.y = Math.random(0,100)*MAX_Y;
+            this.radChange = CHANGE_RATE;
+          }
+            
+          drawCircle(this.x, this.y, this.radius, this.style);
+        }
+
+        window.step = function(){
+          context.clearRect(0,0,w,h);
+          for(s in sparks){
+            sparks[s].render();
+          }
+          requestAnimationFrame(function(){
+            setTimeout(step, 50)
+          });
+        }
+
+        window.requestAnimationFrame = window.requestAnimationFrame
+          || window.webkitRequestAnimationFrame
+          || window.mozRequestAnimationFrame
+          || window.oRequestAnimationFrame
+          || window.msRequestAnimationFrame;
+
+        var sparks = [];
+        for(var i=0; i< NUM_SPARKS; i++){
+          sparks.push(new Spark());
+        }
+        //window.onload = function(){setTimeout(resizeWindow, 0);}
+        if(!running){
+            step();
+            running = true;
+        }
+    }
+    </script></html>
