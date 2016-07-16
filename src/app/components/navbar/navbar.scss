@@ -1,0 +1,20 @@
+.nav-bar {
+	margin-bottom: 20px;
+	.top-bar-section ul {
+		width: 725px;
+		display: block;
+		margin: 0 auto;
+		height: 45px;
+		max-width: 100%;
+
+		li {
+			background: transparent;
+		}
+	}
+	.top-bar .toggle-topbar.menu-icon{
+		color: $gold;
+    	top: 5px;
+    	margin-top: 0;
+    	list-style: none;
+	}
+}	

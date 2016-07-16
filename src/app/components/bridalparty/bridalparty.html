@@ -1,0 +1,55 @@
+<div id="bridalparty" class="bridal-party row">
+	<div class="dashed bridalLabel">The Bridal Party</div>
+	<div class="slide prevSlide" id="party-prevSlide"  ng-style="{'background-image': 'url(' + party.previousSlide.bg + ')'}">
+		<div class="left-panel party-panel">
+			<div class="party-img" ng-style="{'background-image': 'url(' + party.previousSlide.img + ')'}"></div>
+			<div class="party-info">
+				<div class="party-name">{{party.previousSlide.name}}</div>
+				<div class="party-title">{{party.previousSlide.title}}</div>
+			</div>
+		</div>
+		<div class="right-panel party-panel">
+			<div class="party-img" ng-style="{'background-image': 'url(' + party.previousSlideRight.img + ')'}"></div>
+			<div class="party-info">
+				<div class="party-name">{{party.previousSlideRight.name}}</div>
+				<div class="party-title">{{party.previousSlideRight.title}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="slide" id="party-activeSlide" ng-style="{'background-image': 'url(' + party.activeSlide.bg + ')'}">
+		<div class="party-panel left-panel">
+			<div class="party-img" ng-style="{'background-image': 'url(' + party.activeSlide.img + ')'}"></div>
+			<div class="party-info">
+				<div class="party-name">{{party.activeSlide.name}}</div>
+				<div class="party-title">{{party.activeSlide.title}}</div>
+			</div>
+		</div>
+		<div class="right-panel party-panel">
+			<div class="party-img" ng-style="{'background-image': 'url(' + party.activeSlideRight.img + ')'}"></div>
+			<div class="party-info">
+				<div class="party-name">{{party.activeSlideRight.name}}</div>
+				<div class="party-title">{{party.activeSlideRight.title}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="slide nextSlide" id="party-nextSlide" ng-style="{'background-image': 'url(' + party.nextSlide.bg +')'}">
+		<div class="left-panel party-panel">
+			<div class="party-img" ng-style="{'background-image': 'url(' + party.nextSlide.img + ')'}"></div>
+			<div class="party-info">
+				<div class="party-name">{{party.nextSlide.name}}</div>
+				<div class="party-title">{{party.nextSlide.title}}</div>
+			</div>
+		</div>
+		<div class="right-panel party-panel">
+			<div class="party-img" ng-style="{'background-image': 'url(' + party.nextSlideRight.img + ')'}"></div>
+			<div class="party-info">
+				<div class="party-name">{{party.nextSlideRight.name}}</div>
+				<div class="party-title">{{party.nextSlideRight.title}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="control left-control" ng-class="{'hidden': party.activeSlideIndex == 0}" ng-click="party.goPrev()">
+	</div>
+	<div class="control right-control" ng-class="{'hidden': party.activeSlideIndex == party.slides.length - party.changeRate}" ng-click="party.goNext()">
+	</div>
+</div>

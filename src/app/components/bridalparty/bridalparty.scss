@@ -1,0 +1,140 @@
+.bridal-party {
+	position: relative;
+	background: -moz-linear-gradient(top,  #051225 0%, #0d2e55 75%, #23587f 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #051225 0%,#0d2e55 75%,#23587f 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #051225 0%,#0d2e55 75%,#23587f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#051225', endColorstr='#23587f',GradientType=0 ); /* IE6-9 */
+	min-height: 675px;
+	width: 100%;
+	overflow: hidden;
+
+	.bridalLabel {
+		margin: 20px 0;
+		text-align: center;
+		font-size: 30px;
+		&:before, &:after{
+			content: '';
+			display: inline-block;
+			width: calc(50% - 135px);
+			max-width: 370px;
+			height: 1px;
+			margin: 5px 10px;
+			background-color: $gold;
+		}
+	}
+
+	.slide {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: inline-block;
+		position: absolute;
+		width: 100%;
+		&.prevSlide {
+			margin-left: -100%;
+		}
+		&.nextSlide {
+			margin-left: 100%;
+		}
+
+		.party-panel {
+			width: 36%;
+			min-width: 325px;
+			min-height: 500px;
+			top: 35px;
+			position: relative;
+
+			&.left-panel {
+				float: left;
+				margin-left: 9%;
+			}
+			&.right-panel {
+				float: left;
+				margin-left: 9%;
+			}
+
+			.party-img {
+				margin: 20px auto 50px auto;
+				width: 250px;
+				height: 300px;
+				border: 10px solid rgba(255,255,255,0.25);
+				background-position: center;
+			}
+
+			.party-info {
+				background: #FFFFFF;
+				text-align: center;
+				
+				.party-name {
+					font-family: 'Unica One', cursive;
+				    font-size: 30px;
+				    color: #3D738D;
+				}
+				.party-title {
+					font-weight: 900;
+					font-size: 22px;
+				}
+			}
+			.year {
+				display: block;
+				border-bottom: 2px solid $gold;
+			    margin: 0 auto;
+			    width: 300px;
+			    text-align: center;
+			    color: $gold;
+			    font-size: 60px;
+			    font-family: 'Unica One';
+			}
+
+		}
+		
+
+		&.slidingLeft {
+			transition: transform 1s ease;
+			transform: translate(-100%, 0);
+		}
+		&.slidingRight {
+			transition: transform 1s ease;
+			transform: translate(100%, 0);
+		}
+	}
+
+	.control {
+		border-left: 5px solid rgba(230, 230, 230, 0.5);
+		border-top: 5px solid rgba(230, 230, 230, 0.5);
+		position: absolute;
+		top: calc(50% - 25px);
+		width: 50px;
+		height: 50px;
+
+		&.hidden {
+			display: none;
+		}
+
+		&.left-control {
+			transform: rotate(-45deg);
+			left: 15px;
+		}
+		&.right-control {
+			transform: rotate(135deg);
+			right: 15px;
+		}
+		&:hover {
+			border-left-color: rgba(230,230,230, 1);
+			border-top-color: rgba(230,230,230, 1);
+			cursor: pointer;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 792px){
+	.bridal-party .slide .party-panel.left-panel {
+	    margin: 0 auto;
+	    float: none;
+	}
+	.bridal-party .slide .party-panel.right-panel {
+	    display: none;
+	}
+}
+

@@ -1,0 +1,30 @@
+<div id="ourstory" class="our-story row">
+	<div class="slide prevSlide" id="prevSlide" ng-style="{'background-image': 'url(' + vm.previousSlide.bg + ')'}">
+		<div class="text">
+				<span class="year">
+					{{ vm.previousSlide.year }}
+				</span>
+				<p>{{ vm.previousSlide.blurb }}</p>
+		</div>
+	</div>
+	<div class="slide" id="activeSlide" ng-style="{'background-image': 'url(' + vm.activeSlide.bg + ')'}">
+		<div class="text">
+				<span class="year">
+					{{ vm.activeSlide.year }}
+				</span>
+				<p>{{ vm.activeSlide.blurb }}</p>
+		</div>
+	</div>
+	<div class="slide nextSlide" id="nextSlide" ng-style="{'background-image': 'url(' + vm.nextSlide.bg +')'}">
+		<div class="text">
+				<span class="year">
+					{{ vm.nextSlide.year }}
+				</span>
+				<p>{{ vm.nextSlide.blurb }}</p>
+		</div>
+	</div>
+	<div class="control left-control" ng-click="vm.goPrev()">
+	</div>
+	<div class="control right-control" ng-click="vm.goNext()">
+	</div>
+</div>

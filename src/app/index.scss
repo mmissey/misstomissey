@@ -1,0 +1,354 @@
+/**
+ *  If you want to override some foundation settings, you have to change values here.
+ *  The list of settings values are listed here bower_components/foundation/scss/foundation/_settings.scss
+ */
+
+$indigo: #051225;
+$gold:  #E0D578;
+$golder: #B7A24E;
+
+$primary-color: $indigo;
+
+$topbar-link-color: $gold;
+$topbar-bg-color: $indigo;
+$topbar-link-bg-hover: $indigo;
+$topbar-link-bg-color-hover: $indigo;
+
+$topbar-link-color-hover: $golder;
+$topbar-link-color-active: $golder;
+$topbar-link-color-active-hover: $golder;
+
+$row-width: 100%;
+
+$body-font-family: 'Questrial', sans-serif;
+/**
+ *  The import of foundation is made manually because there is still no links of the
+ *  sass version in their bower.json...
+ */
+@import '../../bower_components/foundation/scss/foundation';
+@import url(https://fonts.googleapis.com/css?family=Questrial);
+@import url(https://fonts.googleapis.com/css?family=Unica+One);
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+$small-text: 22px;
+
+
+body {
+  .title {
+    font-size: 5rem;
+    font-family: 'Unica One', cursive;
+    color: $gold;
+  }
+}
+
+.bold {
+	font-weight: 900;
+}
+
+a {
+	color: #E0D578;
+	text-decoration: none;
+	&:active, &:visited {
+		color: #E0D578;
+	}
+	&:hover{
+		color: #B7A24E;
+	}
+}
+
+
+.header {
+	  //background-color: $indigo;
+	  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#051225+0,0d2e55+75,23587f+100 */
+	background: #051225; /* Old browsers */
+	height: 100vh;
+	min-height: 1080px;
+	text-align: center;
+	background: -moz-linear-gradient(top,  #051225 0%, #0d2e55 75%, #23587f 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #051225 0%,#0d2e55 75%,#23587f 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #051225 0%,#0d2e55 75%,#23587f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#051225', endColorstr='#23587f',GradientType=0 ); /* IE6-9 */
+	padding-bottom: 100px;
+}
+
+.headshot {
+	background: url('../assets/images/headshot.png');
+	height: 600px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 562px;
+	max-width: 100%;
+    margin: 20px auto;
+    border: 15px solid rgba(152,152,152,0.25);
+}
+
+.hashtag{
+	color: $gold;
+	font-size: $small-text;
+}
+
+.dashed {
+	color: $gold;
+	font-size: $small-text;
+	&.toptext {
+		&:before, &:after{
+			content: '';
+			display: inline-block;
+			width: calc(50% - 90px);
+			max-width: 300px;
+			height: 1px;
+			margin: 5px 10px;
+			background-color: $gold;
+		}
+	}
+	&.bottomtext {
+		&:before, &:after{
+			content: '';
+			display: inline-block;
+			width: calc(50% - 143px);
+			max-width: 244px;
+			height: 1px;
+			margin: 5px 10px;
+			background-color: $gold;
+		}
+	}
+}
+
+.venue {
+	color: #E0D578;
+	text-align: center;
+	width: 100%;
+	background: -webkit-linear-gradient(top, #23587f 0%, #0d2e55 75%, #051225 100%);
+	background: linear-gradient(to bottom,  #23587f 0%, #0d2e55 75%, #051225 100%);
+	.venue-header {
+    	padding: 15px 0 65px;
+    	font-size: 30px;
+    	&:before, &:after{
+    		content: '';
+    		display: inline-block;
+    		width: calc(50% - 135px);
+    		max-width: 370px;
+    		height: 1px;
+    		margin: 5px 10px;
+    		background-color: $gold;
+    	}
+	}
+	.venueMap {
+		width: 50%;
+		min-width: 320px;
+		margin: 0 auto;
+		display: block;
+	}
+	.whenwhere {
+		max-width: 50%;
+		margin: 0 auto;
+
+		a {
+			color: #E0D578;
+			text-decoration: none;
+			&:active, &:visited {
+				color: #E0D578;
+			}
+			&:hover{
+				color: #B7A24E;
+			}
+		}
+	}
+	.venueName {
+		text-align: center;
+		padding: 20px 0 0;
+		font-size: 25px;
+	}
+	.note {
+		padding-bottom: 20px;
+    	font-size: 1.2em;
+	}
+	.venueInfo {
+		background: none;
+		border: none;
+		margin: 0 auto;
+	    text-align: center;
+	    padding: 20px;
+	    border-top: 1px solid #E0D578;
+        margin-bottom: 50px;
+
+		td {
+			color: #E0D578;
+			font-size: 1.2em;
+			vertical-align: top;
+    		width: 70%;
+    		&.bold {
+    			width: 30%;
+    		}
+    		&.note {
+    			width: 100%;
+    			text-align: center;
+    		}
+		}
+
+		tr:nth-of-type(even){
+			background: none;
+		}
+	}
+}
+
+.clearfix{
+	clear: both;
+}
+
+body {
+  background: #000000;
+}
+
+#sparkler {
+ width: 100%;
+ height: 800px;
+ position: absolute;
+}
+
+
+@media only screen and (min-width: 40.0625em){
+	.top-bar {
+		background: transparent;
+	}
+	.top-bar-section li.active:not(.has-form) a:not(.button) {
+		background: transparent;
+	}
+	.top-bar-section li:not(.has-form) a:not(.button) {
+		background: transparent;
+	}
+}
+
+@media only screen and (max-width: 792px){
+	.venue .whenwhere{
+		max-width: 100%;
+	}
+
+	.venue .venueMap {
+		width: 90%;
+	}
+}
+
+#accommodations {
+	color: #E0D578;
+	text-align: center;
+	width: 100%;
+	min-height: 100vh;
+	padding-bottom: 30px;
+	background: -moz-linear-gradient(top,  #051225 0%, #0d2e55 75%, #23587f 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #051225 0%,#0d2e55 75%,#23587f 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #051225 0%,#0d2e55 75%,#23587f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	h3 {
+		color: #E0D578;
+		font-size: 25px;
+	}
+	h5{
+		color: #E0D578;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	.hotel {
+		border-bottom: 1px solid #E0D578;
+		padding: 30px 0;
+		width: 50%;
+		min-width: 320px;
+		margin: 0 auto;
+
+		a{
+			text-decoration: underline;
+		}
+		iframe {
+			height: 300px;
+			width: 100%;
+			max-width: 400px;
+		}
+	}
+
+	.venue-header {
+    	padding: 15px 0;
+    	font-size: 30px;
+    	&:before, &:after{
+    		content: '';
+    		display: inline-block;
+    		width: calc(50% - 140px);
+    		max-width: 370px;
+    		height: 1px;
+    		margin: 5px 10px;
+    		background-color: $gold;
+    	}
+	}
+}
+
+.footer {
+	display: block;
+    text-align: center;
+    margin-top: -2em;
+}
+
+.codedby {
+	color: #E0D578;
+	margin-top: 20px;
+}
+
+#registry {
+	min-height: 100vh;
+	background: url("../assets/images/tropical.jpg");
+	background-position: center;
+	background-size: cover;
+	padding: 20px 0;
+
+	.venue-header {
+		text-align: center;
+    	padding: 0px 0 20px;
+    	font-size: 30px;
+    	&:before, &:after{
+    		content: '';
+    		display: inline-block;
+    		width: calc(50% - 135px);
+    		max-width: 370px;
+    		height: 1px;
+    		margin: 5px 10px;
+    		background-color: $gold;
+    	}
+	}
+	.text {
+		width: 80%;
+		background: rgba(255, 255, 255, 0.9);
+		margin: 30vh auto;
+		min-height: 40vh;
+		position: relative;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+
+	#crate {
+		margin-bottom: 50px;
+		img {
+    		background: #FFFFFF;
+			padding: 25px;
+		}
+	}
+	#homedepot {
+		margin-bottom: 50px;
+		img {
+			width: 300px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
